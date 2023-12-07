@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+    datascience-notebook:
+        # user: root # https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html#user-related-configurations
+                   # -e GRANT_SUDO=yes You must run the container with --user root for this option to take effect.
+                   # logs Granting jovyan passwordless sudo rights!
+                   # activate/uncomment only for debugging
+        stdin_open: true
+        tty: true
+        build:
+          context: .
+          dockerfile: dockerfile
+        ports:
+            - ${PORT}:8888
+        volumes:
+            - './../${WORK_VOLUME}:/home/jovyan/work'
+        container_name: ${NAME}
+        environment:
+          - TOKEN=${TOKEN}
+          - GRANT_SUDO=yes # https://github.com/jupyter/docker-stacks/issues/408#issuecomment-355893377
+                           # https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html#user-related-configurations
+                           # works ONLY if user: root is active, else WARNING: container must be started as root to grant sudo permissions!

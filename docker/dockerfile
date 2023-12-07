@@ -1,0 +1,35 @@
+# Pick your favorite docker-stacks image
+FROM quay.io/jupyter/datascience-notebook:2023-11-17
+
+USER root
+
+# Add permanent apt-get installs and other root commands here
+# e.g., RUN apt-get install --yes --no-install-recommends npm nodejs
+
+RUN apt-get update && \
+    apt-get install -y graphviz && \
+    apt-get clean
+
+# https://blog.ouseful.info/2019/02/05/on-not-faffing-around-with-jupyter-docker-container-auth-tokens/
+# There’s a /usr/local/bin/start-notebook.d/ directory that can contain files that are executed prior to the notebook server starting
+RUN mkdir -p /usr/local/bin/start-notebook.d/ && \
+    echo "if [ \$TOKEN!=-1 ]; then echo \"c.NotebookApp.token='\$TOKEN'\" >> $HOME/.jupyter/jupyter_notebook_config.py; fi" >> /usr/local/bin/start-notebook.d/tokeneffort.sh && \
+    chmod +x /usr/local/bin/start-notebook.d/tokeneffort.sh
+
+# https://jupyter-docker-stacks.readthedocs.io/en/latest/using/recipes.html#using-mamba-install-recommended-or-pip-install-in-a-child-docker-image
+# Install from the requirements.txt file
+COPY --chown=${NB_UID}:${NB_GID} installpackages.txt /tmp/
+RUN mamba install --yes --file /tmp/installpackages.txt && \
+    mamba clean --all -f -y && \
+    fix-permissions "${CONDA_DIR}" && \
+    fix-permissions "/home/${NB_USER}"
+
+USER ${NB_UID}
+
+# Switch back to jovyan to avoid accidental container runs as root
+# Add permanent mamba/pip/conda installs, data files, other user libs here
+# e.g., RUN pip install --no-cache-dir flake8
+# see https://github.com/jupyter/docker-stacks/blob/main/images/datascience-notebook/Dockerfile
+
+
+
