@@ -47,7 +47,7 @@ Rise = difference between the y-coordinates of points A and B
 
 Run = difference between the x-coordinates of points A and B
 
-Rise over run formula (or) slope (m) = $\frac{y2 - y1}{x2 -x1} = \frac{Δy}{Δx} $olic
+Rise over run formula (or) slope (m) $= \frac{y2 - y1}{x2 -x1} = \frac{Δy}{Δx} $
 
 # Hyperbolic functions
 
