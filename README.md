@@ -19,7 +19,7 @@ Deriving means creating a formula or equation for a given situation or phenomeno
 L stands for Loss function. https://en.wikipedia.org/wiki/Loss_function
 > In mathematical optimization and decision theory, a loss function or cost function (sometimes also called an error function) [1] is a function that maps an event or values of one or more variables onto a real number intuitively representing some "cost" associated with the event. An optimization problem seeks to minimize a loss function. An objective function is either a loss function or its opposite (in specific domains, variously called a reward function, a profit function, a utility function, a fitness function, etc.), in which case it is to be maximized. The loss function could include terms from several levels of the hierarchy.
 
-# Affect vs Effect vs Impact
+## Affect vs Effect vs Impact
 
 Affect is a verb meaning ‘influence or cause someone or something to change’.
 
@@ -29,7 +29,7 @@ Effect is a noun that means ‘the result of an influence’.
 | --- | --- | --- | --- | --- | --- |
 | Affect as a verb means "to influence." | Affect as a noun has a specialized meaning in medicine and psychology, referring to moods and feeling as distinct from thoughts or knowledge. | Effect as a verb means "to bring about, to produce," or to "accomplish something." | Effect as a noun means "result." | Impact as a verb means "strike with a blow" or "to pack firmly together." | Impact as a noun means "a collision." |
 
-# Chain rule
+## Chain rule
 
 https://en.wikipedia.org/wiki/Chain_rule#Intuitive_explanation
 > The chain rule may also be expressed in Leibniz's notation. If a variable z depends on the variable y, which itself depends on the variable x (that is, y and z are dependent variables), then z depends on x as well, via the intermediate variable y. <br/><br/> Intuitively, the chain rule states that knowing the instantaneous rate of change of z relative to y and that of y relative to x allows one to calculate the instantaneous rate of change of z relative to x as the product of the two rates of change.
@@ -39,7 +39,7 @@ Example
 
 > Let z, y and x be the (variable) positions of the car, the bicycle, and the walking man, respectively. The rate of change of relative positions of the car and the bicycle is $\frac{dx}{dy} = 2$. Similarly, $\frac{dy}{dx} = 4.$ <br/> So, the rate of change of the relative positions of the car and the walking man is <br/> $\frac{dz}{dx} =\frac{dz}{dx} = {{\frac{dz}{dy}} \cdot {\frac{dz}{dy}}} = 2 \cdot 4 = 8$
 
-# Rise over run formula (or) slope (m)
+## Rise over run formula (or) slope (m)
 
 Consider a line joining two points A(x1,y1) abd B(x2,y2). The slope of this line is the ratio of the difference in y coordinates and the difference in x coordinates.
 
@@ -49,8 +49,12 @@ Run = difference between the x-coordinates of points A and B
 
 Rise over run formula (or) slope (m) $= \frac{y2 - y1}{x2 -x1} = \frac{Δy}{Δx} $
 
-# Hyperbolic functions
+## Hyperbolic functions
 
 https://en.wikipedia.org/wiki/Hyperbolic_functions
+
+## Images
+
+https://cs231n.github.io/convolutional-networks/
 
 
