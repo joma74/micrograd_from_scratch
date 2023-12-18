@@ -34,7 +34,7 @@ class Neuron:
         # Then we need to pass that through a non-linear function
         out = act.tanh()
         out._label = f'{self.b._label[0:len(self.b._label)-2]}|o'
-        return outself
+        return out
 
     def parameters(self):
         """
@@ -67,6 +67,26 @@ class Layer:
         outs = [n(xs) for n in self.neurons]
         # for convenience, if outs is just an array with a single element, then return the element
         return outs[0] if len(outs) == 1 else outs
+
+    def parameters(self):
+        """
+        return: the Bias and all Weights of all Neurons in this Layer, in top-down order t.i. [params of N0, params of N1,..params of Nx]
+        """
+        # paramsout = []
+        # return for neuron in self.neurons:
+        #    neuronparams = neuron.parameters()
+        #    paramsout.extend(neuronparams)
+        # return params
+        # Above code can be simplified with Python Nested List Comprehension:
+        # List comprehension enables looping through multi-dimensional lists and flattening them into a 
+        # single-dimensional output list.
+        # Example: nested = [[1, 2], [3, 4], [5, 6]]
+        #          elements = [element    for pair in nested        for element in pair]
+        #               return element by looping through nested 
+        #                                 returning any item as pair
+        #                                                      by looping through pair 
+        #                                                      returning any item as element
+        return [p for neuron in self.neurons for p in neuron.parameters()] 
 
 class MLP:
     """
@@ -102,3 +122,9 @@ class MLP:
         for layer in self.layers:
             outs = layer(outs) 
         return outs
+
+    def parameters(self):
+        """
+        return: the Bias and all Weights of all Neurons in all Layer, in top-down order t.i. [params of L0:N0, params of L0:N1,..params of Lx:Nx]
+        """
+        return [p for layer in self.layers for p in layer.parameters()] 
