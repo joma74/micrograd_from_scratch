@@ -34,7 +34,13 @@ class Neuron:
         # Then we need to pass that through a non-linear function
         out = act.tanh()
         out._label = f'{self.b._label[0:len(self.b._label)-2]}|o'
-        return out
+        return outself
+
+    def parameters(self):
+        """
+        return: the Bias and all Weights of this Neuron
+        """
+        return self.w + [self.b]
 
 class Layer:
     def __init__(self, nin, nout, relLayerIdx):
@@ -43,7 +49,7 @@ class Layer:
         nout: number of outputs; how many Neurons in that layer, each initialized with nin
         relLayerIdx: index of the Layer, relative inside it's MLP
         """
-        self.neuron = [Neuron(nin, relLayerIdx, _) for _ in range(nout)]
+        self.neurons = [Neuron(nin, relLayerIdx, _) for _ in range(nout)]
 
     def __call__(self, xs):
         """
@@ -58,7 +64,7 @@ class Layer:
         # Value into a Value. To enable, uncomment the next line.
         # xs = [x if isinstance(x, Value) else Value(x) for x in xs]
         #
-        outs = [n(xs) for n in self.neuron]
+        outs = [n(xs) for n in self.neurons]
         # for convenience, if outs is just an array with a single element, then return the element
         return outs[0] if len(outs) == 1 else outs
 
