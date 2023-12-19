@@ -57,4 +57,16 @@ https://en.wikipedia.org/wiki/Hyperbolic_functions
 
 https://cs231n.github.io/convolutional-networks/
 
+## Gradient descent
+
+https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/optimizing-multivariable-functions/a/what-is-gradient-descent
+> Gradient descent is an algorithm that numerically estimates where a function outputs its lowest values. That means it finds local minima, but not by setting 
+$ \nabla f = 0 $ like we've seen before. Instead of finding minima by manipulating symbols, gradient descent approximates the solution with numbers. Furthermore, all it needs in order to run is a function's numerical output, no formula required. ... gradient descent can give us these estimates no matter how elaborate our function is.
+>
+> Think of a function $f(x, y)$ that defines some hilly terrain when graphed as a height map. 
+>
+> That might spark an idea for how we could maximize the function: start at a random input, and as many times as we can, take a small step in the direction of the gradient to move uphill. In other words, walk up the hill.
+>
+> To minimize the function, we can instead follow the negative of the gradient, and thus go in the direction of steepest descent. This is gradient descent.
+
 
