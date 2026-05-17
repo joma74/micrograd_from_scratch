@@ -9,6 +9,15 @@ https://jupyter-docker-stacks.readthedocs.io/en/latest/using/recipes.html#using-
 ## Diverse Installation Tips
 https://scalingpythonml.com/2020/12/12/deploying-jupyter-lab-notebook-for-dask-on-arm-on-k8s.html
 
+## Usage
+
+```
+docker/up.sh
+docker/down.sh
+http://localhost:10000/
+```
+For token see docker/env.sh 
+
 # Content
 
 ## Deriving vs Differentiating
