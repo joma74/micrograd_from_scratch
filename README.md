@@ -46,7 +46,7 @@ https://en.wikipedia.org/wiki/Chain_rule#Intuitive_explanation
 Example
 > "If a car travels twice as fast as a bicycle and the bicycle is four times as fast as a walking man, then the car travels 2 × 4 = 8 times as fast as the man."
 
-> Let z, y and x be the (variable) positions of the car, the bicycle, and the walking man, respectively. The rate of change of relative positions of the car and the bicycle is $\frac{dx}{dy} = 2$. Similarly, $\frac{dy}{dx} = 4.$ <br/> So, the rate of change of the relative positions of the car and the walking man is <br/> $\frac{dz}{dx} =\frac{dz}{dx} = {{\frac{dz}{dy}} \cdot {\frac{dz}{dy}}} = 2 \cdot 4 = 8$
+> Let z, y and x be the (variable) positions of the car z, the bicycle y, and the walking man x, respectively. The rate of change of relative positions of the car and the bicycle is $\frac{dz}{dy} = 2$. Similarly, $\frac{dy}{dx} = 4.$ <br/> So, the rate of change of the relative positions of the car and the walking man is <br/> $\frac{dz}{dx} = {{\frac{dz}{dy}} \cdot {\frac{dy}{dx}}} = 2 \cdot 4 = 8$
 
 ## Rise over run formula (or) slope (m)
 
